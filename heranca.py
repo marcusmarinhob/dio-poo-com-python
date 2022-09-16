@@ -11,7 +11,7 @@ class Veiculo:
         print("Ligando o motor...")
 
     def __str__(self):
-        return self.cor
+        return f"{self.__class__.__name__}: {', '.join( [ f'{chave}={valor}' for chave, valor in self.__dict__.items() ] )}"
 
 class Motocicleta(Veiculo):
     pass
@@ -29,12 +29,15 @@ class Caminhao(Veiculo):
 
 
 moto = Motocicleta("vermelho", "ABC-1234", 2)
-moto.ligar_motor()
+# moto.ligar_motor()
 
 carro = Carro("branco", "EFG-5678", 4)
-carro.ligar_motor()
+# carro.ligar_motor()
 
 caminhao = Caminhao("azul", "IJK-9012", 8, False)
-caminhao.ligar_motor()
-caminhao.esta_carregado()
+# caminhao.ligar_motor()
+# caminhao.esta_carregado()
+
+print(moto)
+print(carro)
 print(caminhao)
